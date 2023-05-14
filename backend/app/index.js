@@ -20,9 +20,9 @@ let persons = [];
 
 app.use(cors({
     origin: '*',
-    methods:['GET',"POST",'DELETE',"PUT","PATCH"],
-  }));
-  
+    methods: ['GET', "POST", 'DELETE', "PUT", "PATCH"],
+}));
+
 
 //NOTE - Listen to the port 
 app.listen(port, () => {
@@ -47,7 +47,7 @@ app.post('/persons', (req, res) => {
     let person;
     id++;
     person = { id: id, ...body };
-    persons.push(person) ;
+    persons.push(person);
     res.send(person);
     console.log(persons);
 });
@@ -99,22 +99,22 @@ app.put('/persons/:id', (req, res) => {
 app.delete('/persons/:id', (req, res) => {
     let id = parseInt(req.params.id);
     let deletedIndex = persons.findIndex((e) => e.id == id);
-    if(deletedIndex>=0){
+    if (deletedIndex >= 0) {
         console.log(deletedIndex);
 
-        persons.splice(deletedIndex,1)
+        persons.splice(deletedIndex, 1)
         res.status(200).send(
             "Message: person Deleted"
         )
     }
-    else{
+    else {
         res.status(404).send(
             "Message: person Don't Found "
         )
     }
 
     console.log(persons);
-    
-    
-  
+
+
+
 });
