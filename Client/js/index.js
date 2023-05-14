@@ -98,8 +98,7 @@ function displayData(response) {
       <th scope="col">Gender</th>
       <th scope="col">Email</th>
       <th scope="col">Id</th>
-    
-      <th scope="col">Action</th>
+      <th scope="col" class="d-flex justify-content-center">Action</th>
 
 
     </tr>
@@ -116,7 +115,7 @@ function displayData(response) {
            <td>${response[i].gender}</td>
            <td>${response[i].email}</td>
            <td>${response[i].id}</td>
-           <td class="d-flex justify-content-end">
+           <td class="d-flex justify-content-center">
            <button class="btn btn-primary mx-2" id="updateBtn" data-bs-toggle="modal"
            data-bs-target="#exampleModal" data-id-person=${response[i].id}>UPDATE</button>
            <button class="btn btn-danger" id="deleteBtn">DELETE</button></td>
